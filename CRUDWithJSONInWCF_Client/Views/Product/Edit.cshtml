@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model CRUDWithJSONInWCF_Client.ViewModels.ProductViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Product"))
+    {
+        <table cellpadding="2" cellspacing="2">
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Product.Id) </td>
+                <td>
+                    @Html.ValueFor(m => m.Product.Id)
+                    @Html.HiddenFor(m => m.Product.Id)
+                </td>
+                <td>
+                    @Html.LabelFor(model => model.Product.Name)
+                </td>
+                <td>@Html.TextBoxFor(m => m.Product.Name)</td>
+                <td>
+                    @Html.LabelFor(model => model.Product.Price)
+                </td>
+                <td>@Html.TextBoxFor(m => m.Product.Price)</td>
+                <td>
+                    @Html.LabelFor(model => model.Product.Quantity)
+                </td>
+                <td>@Html.TextBoxFor(m => m.Product.Quantity)</td>
+                
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Save" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
